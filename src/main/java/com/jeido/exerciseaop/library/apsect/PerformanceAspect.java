@@ -14,10 +14,9 @@ public class PerformanceAspect {
 
 
     @Pointcut("@annotation(com.jeido.exerciseaop.library.annotation.AroundAnnotation)")
-    public void pointCut() {
+    public void pointCut() {}
 
-    }
-
+    //TODO Thread safe around
     @Before("pointCut()")
     public void before(JoinPoint joinPoint) {
         startTime = System.currentTimeMillis();
